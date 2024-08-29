@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import "./App.css";
 import SimpleCounter from "./components/SimpleCounter";
+import Q3 from "./components/Q3";
+import Q4 from "./components/Q4";
+import Q5 from "./components/Q5";
+import Q6 from "./components/Q6";
+import Q7 from "./components/Q7";
 
 function App() {
-  const tabs = [
-    "Question 1",
-    "Question 2",
-    "Question 3"
-  ];
+  const tabs = ["Question 1", "Question 2", "Question 3", "Question 4", "Question 5", "Question 6", "Question 7"];
   const [selectedTab, setSelectedTab] = useState(null);
 
   const handleTab = (tab) => {
@@ -26,27 +27,29 @@ function App() {
           borderColor: "black",
         }}
       />
-      <div style={{ width: "80%", maxWidth: "80%", minWidth: "80%" }}>
-        {tabs.map((tab, index) => (
-          <button
-            key={index}
-            style={{
-              padding: "10px 20px",
-              margin: "10px",
-              fontSize: "20px",
-              borderRadius: "10px",
-              backgroundColor: "lightblue",
-            }}
-            onClick={() => handleTab(tab)}
-          >
-            {tab}
-          </button>
-        ))}
+      <div style={{ width: "80%", maxWidth: "80%", minWidth: "80%", display: "flex", flexDirection: "column", flexGrow: 1, height: "100%" }}>
+        <div>
+          {tabs.map((tab, index) => (
+            <button
+              key={index}
+              style={{
+                padding: "10px 20px",
+                margin: "10px",
+                fontSize: "20px",
+                borderRadius: "10px",
+                backgroundColor: "lightblue",
+              }}
+              onClick={() => handleTab(tab)}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
         {selectedTab === "Question 1" && (
-          <div>
+          <div style={{ padding: "5rem", textAlign: "start" }}>
             <br />
             <p>
-              <strong>1. Coding Challenge: Array Manipulation</strong>
+              <strong className="title">1. Array Manipulation</strong>
             </p>
             <p>
               {`const input =[1,2,3,4];`} <br />
@@ -54,42 +57,25 @@ function App() {
             </p>
             <br />
             <p>
-              <strong>
-                2. Conceptual Question: What are the differences between `==`
-                and `===` in JavaScript?
-              </strong>
+              <strong className="title">2. What are the differences between `==` and `===` in JavaScript?</strong>
             </p>
             <p>
-              In JavaScript, both == and === are used to compare values, but
-              they differ in how they handle the comparison:
+              In JavaScript, both == and === are used to compare values, but they differ in how they handle the comparison:
               <br />
-              The first is loose equality, which means that JavaScript will try
-              to convert the variables to a common type before comparing.
+              The first is loose equality, which means that JavaScript will try to convert the variables to a common type before comparing.
               <br />
-              The second is strict equality, which means that JavaScript will
-              compare both the value and the type, and will return false if
-              either the value or type is different.
+              The second is strict equality, which means that JavaScript will compare both the value and the type, and will return false if either the value or type is different.
               <br />
-              For instance, "1" === 1 would return false, but "1" == 1 would
-              return true.
+              For instance, "1" === 1 would return false, but "1" == 1 would return true.
             </p>
           </div>
         )}
         {selectedTab === "Question 2" && <SimpleCounter />}
-        {selectedTab === "Question 3" && (
-          <>
-            <p>http://localhost:3333/message</p>
-            <br />
-            <p>
-              <strong>2. How NodeJS Handles Asynchronous Operations:</strong>
-            </p>
-            <p>
-              NodeJS handles asynchronous operations using an event-driven, non-blocking I/O model. <br />
-              This means that instead of waiting for operations like file reading, network requests, or database queries to complete, NodeJS will continue executing the rest of the code. <br />
-              When the asynchronous operation is done, a callback function or a promise will be triggered to handle the result.
-            </p>
-          </>
-        )}
+        {selectedTab === "Question 3" && <Q3 />}
+        {selectedTab === "Question 4" && <Q4 />}
+        {selectedTab === "Question 5" && <Q5 />}
+        {selectedTab === "Question 6" && <Q6 />}
+        {selectedTab === "Question 7" && <Q7 />}
       </div>
     </div>
   );

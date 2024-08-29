@@ -17,9 +17,9 @@ const Counter = () => {
 
   return (
     <div>
-      <div style={{padding: "30px 0px",}}>
-        <p style={{width: "80%", margin: "auto"}}>
-          <strong style={{fontSize: "30px"}}>Purpose of useEffect:</strong> <br /><br />
+    <div style={{ padding: "5rem", textAlign:"start" }}>
+    <p>
+          <strong className='title'>Purpose of useEffect:</strong> <br /><br />
           The useEffect hook in React is used for handling side effects in functional components.
           Side effects are things that affect something outside the scope of the function, like
           fetching data, setting up a subscription, or manually changing the DOM.

@@ -2,12 +2,11 @@
   text-align: center;
   background-color: rgb(198, 225, 242);
   display: flex;
-  height: 100vh;
   justify-content: center;
   align-items: center; 
   padding: 0 50px;
+  height: 100%; /* Take up the full height of the parent container */
 }
-
 
 .App-header {
   min-height: 100vh;
@@ -21,4 +20,16 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 30px;
+  background-color: rgb(198, 225, 242);
 }
