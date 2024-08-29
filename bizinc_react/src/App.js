@@ -79,10 +79,10 @@ function App() {
         {selectedTab === "Question 3" && (
           <>
             <p>http://localhost:3333/message</p>
+            <br />
             <p>
               <strong>2. How NodeJS Handles Asynchronous Operations:</strong>
             </p>
-            <br />
             <p>
               NodeJS handles asynchronous operations using an event-driven, non-blocking I/O model. <br />
               This means that instead of waiting for operations like file reading, network requests, or database queries to complete, NodeJS will continue executing the rest of the code. <br />
