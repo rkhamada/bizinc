@@ -9,7 +9,7 @@ import Q7 from "./components/Q7";
 
 function App() {
   const tabs = ["Question 1", "Question 2", "Question 3", "Question 4", "Question 5", "Question 6", "Question 7"];
-  const [selectedTab, setSelectedTab] = useState(null);
+  const [selectedTab, setSelectedTab] = useState("Question 1");
 
   const handleTab = (tab) => {
     setSelectedTab(tab);
@@ -37,7 +37,9 @@ function App() {
                 margin: "10px",
                 fontSize: "20px",
                 borderRadius: "10px",
-                backgroundColor: "lightblue",
+                backgroundColor: selectedTab === tab ? "darkblue" : "lightblue", 
+                color: selectedTab === tab ? "white" : "black", 
+                border: selectedTab === tab ? "2px solid darkblue" : "1px solid lightblue", 
               }}
               onClick={() => handleTab(tab)}
             >
